@@ -1,0 +1,21 @@
+.campo-form {
+    margin: 24px 0;
+}
+
+.campo-form label {
+    display:block;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.campo-form input {
+    background: #fff;
+    font-size: 24px;
+    border: none;
+    box-shadow: 4px 10px 24px rgba(131, 131, 131, 0.6);
+    border-radius: 3px;
+    padding: 24px;
+    width: 100%;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
