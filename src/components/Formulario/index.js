@@ -4,7 +4,7 @@ import './Formulario.css'
 import SelectForm from './SelectForm';
 import Submit from './Submit';
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times = [
         'Desenvolvimento',
@@ -19,7 +19,11 @@ const Formulario = () => {
 
     const aoSalvar = (event) => {
         event.preventDefault();
-        console.log('Formulário salvo com sucesso!', nome, cargo, time);
+        props.onCreate({
+            nome: nome,
+            cargo: cargo,
+            time: time
+        });
     };
 
     return (

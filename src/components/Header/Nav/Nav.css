@@ -17,4 +17,9 @@
     text-decoration: none;
     color:#fff;
     font-size: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color:aquamarine;
 }
