@@ -6,8 +6,9 @@ import Submit from './Submit';
 
 const Formulario = (props) => {
 
-    const [nome, setNome] = useState('')
+    const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
 
     const aoSalvar = (event) => {
@@ -15,8 +16,13 @@ const Formulario = (props) => {
         props.onCreate({
             nome: nome,
             cargo: cargo,
+            imagem: imagem,
             time: time
         });
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
     };
 
     return (
@@ -28,19 +34,29 @@ const Formulario = (props) => {
                 valor={nome}
                 aoAlterado={valor => setNome(valor)}
                 label="Nome"
-                placeholder="Digite o nome"/>
+                placeholder="Digite o nome"
+                />
                 <CampoForm 
                 required={true}
                 valor={cargo}
                 aoAlterado={valor => setCargo(valor)}
                 label="Cargo" 
-                placeholder="Digite o cargo"/>
+                placeholder="Digite o cargo"
+                />
+                <CampoForm
+                required={true}
+                valor={imagem}
+                aoAlterado={imagem => setImagem(imagem)}
+                label="Imagem"
+                placeholder="Digite o caminho da imagem"
+                />
                 <SelectForm 
                 required={true}
                 valor={time}
                 aoAlterado={valor => setTime(valor)}
                 label="Time" 
-                itens={props.times}/>
+                itens={props.times}
+                />
                 <Submit>Criar card</Submit>
             </form>
         </section>

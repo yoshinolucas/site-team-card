@@ -10,22 +10,26 @@ function App() {
     {
       nome: 'Programação',
       corPrimaria: '#57C278',
-      corSecundaria: '#D9F7E9'
+      corSecundaria: '#D9F7E9',
+      icon: 'fa-solid fa-code'
     },
     {
       nome: 'Front End',
       corPrimaria: '#82CFFA',
-      corSecundaria: '#E8F8FF'
+      corSecundaria: '#E8F8FF',
+      icon: 'fa-solid fa-paint-roller'
     },
     {
       nome: 'Data Science',
       corPrimaria: '#A6D157',
-      corSecundaria: '#F0F8E2'
+      corSecundaria: '#F0F8E2',
+      icon:'fa-solid fa-database'
     },
     {
       nome: 'Devops',
       corPrimaria: '#E06B69',
-      corSecundaria: '#FDE7E8'
+      corSecundaria: '#FDE7E8',
+      icon: 'fa-solid fa-microchip'
     }
   ];
 
@@ -50,6 +54,10 @@ function App() {
          nome={time.nome} 
          corPrimaria={time.corPrimaria}
          corSecundaria={time.corSecundaria}
+         icon={time.icon}
+         colaboradores={colaboradores.filter(
+          colaborador => 
+          colaborador.time === time.nome)}
         />
       )}
     </div>
