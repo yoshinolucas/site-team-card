@@ -6,13 +6,6 @@ import Submit from './Submit';
 
 const Formulario = (props) => {
 
-    const times = [
-        'Desenvolvimento',
-        'Infraestrutura',
-        'UX & Design',
-        'Mobile'
-    ];
-
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('');
     const [time, setTime] = useState('');
@@ -40,12 +33,14 @@ const Formulario = (props) => {
                 required={true}
                 valor={cargo}
                 aoAlterado={valor => setCargo(valor)}
-                label="Cargo" placeholder="Digite o cargo"/>
+                label="Cargo" 
+                placeholder="Digite o cargo"/>
                 <SelectForm 
                 required={true}
                 valor={time}
                 aoAlterado={valor => setTime(valor)}
-                label="Time" itens={times}/>
+                label="Time" 
+                itens={props.times}/>
                 <Submit>Criar card</Submit>
             </form>
         </section>
